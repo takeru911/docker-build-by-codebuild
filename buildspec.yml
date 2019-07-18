@@ -1,0 +1,11 @@
+version: 0.2
+env:
+  variables:
+    REPOSITORY: cdk-auto-build
+phases:
+  build:
+    commands:
+      - make push
+  post_build:
+    commands:
+      - aws ecr list-images --repository-name ${REPOSITORY}
