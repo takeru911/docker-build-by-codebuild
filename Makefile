@@ -1,7 +1,7 @@
 ACCOUNT_ID:=044768335503
 IMAGE:=cdk-auto-build
 REGISTRY:=$(ACCOUNT_ID).dkr.ecr.ap-northeast-1.amazonaws.com/$(IMAGE)
-TAG:=$(git rev-parse HEAD)
+TAG:=$(shell git rev-parse HEAD)
 
 login:
 	$(shell aws ecr get-login --no-include-email --region ap-northeast-1)
