@@ -11,7 +11,7 @@ build:
 	docker tag $(IMAGE):latest $(REGISTRY):latest
 	docker tag $(IMAGE):latest $(REGISTRY):$(TAG)
 
-push: build
+push: login build
 	docker push 044768335503.dkr.ecr.ap-northeast-1.amazonaws.com/cdk-auto-build:latest
 	docker push 044768335503.dkr.ecr.ap-northeast-1.amazonaws.com/cdk-auto-build:$(TAG)
 
