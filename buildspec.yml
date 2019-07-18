@@ -4,6 +4,8 @@ env:
     REPOSITORY: cdk-auto-build
 phases:
   build:
+    runtime-versions:
+      docker: 18
     commands:
       - make push
   post_build:
